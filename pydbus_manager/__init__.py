@@ -1,14 +1,15 @@
+# -*- coding: utf-8 -*-
+
 __all__ = ["Manager"]
 
 from pydbus.auto_names import *
 
-from .manager import ManagerMixin
 from .proxy import ProxyMixin
 from .publication import PublicationMixin
 from .registration import RegistrationMixin
 from .subscription import SubscriptionMixin
 
-class Manager(ManagerMixin, ProxyMixin, SubscriptionMixin, RegistrationMixin, PublicationMixin):
+class Manager(ProxyMixin, SubscriptionMixin, RegistrationMixin, PublicationMixin):
 
 	def __init__(self, bus, bus_name, path=None, publish=True):
 		bus_name = auto_bus_name(bus_name)

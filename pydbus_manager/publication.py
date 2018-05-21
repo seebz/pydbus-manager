@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 
 NODE_INFO = """
 <node>
@@ -26,7 +27,5 @@ class PublicationMixin(object):
 		bus_name = self.bus_name
 		path = self.path
 
-		node_info = [NODE_INFO]  # TODO: add child xml interface from doc
-
-		publication = bus.publish(bus_name, (path, self, node_info))
+		publication = bus.publish(bus_name, (path, self, NODE_INFO))
 		return publication

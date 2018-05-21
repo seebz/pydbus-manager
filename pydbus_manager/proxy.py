@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 
 class ProxyMixin(object):
 	__slots__ = ()
