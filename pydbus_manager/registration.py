@@ -65,7 +65,7 @@ class RegistrationMixin:
 		"""Implementation of org.freedesktop.DBus.ObjectManager.GetManagedObjects()"""
 		object_paths_interfaces_and_properties = {}
 
-		for path in self._objects:
+		for path, object_ in self._objects.items():
 			object_paths_interfaces_and_properties[path] = self._get_interfaces_and_properties(path)
 
 		return object_paths_interfaces_and_properties
